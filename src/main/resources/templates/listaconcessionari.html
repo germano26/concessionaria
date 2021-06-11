@@ -1,8 +1,7 @@
-
 <!doctype html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
   <head>
-    <title>Concessionaria</title>
+    <title>Lista Concessionari</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -18,31 +17,38 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
-            <li class="nav-item active">
+            <li class="nav-item">
               <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Regioni</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item active">
               <a class="nav-link" href="/listaconcessionari">Elenco Concessionari</a>
             </li>
           </ul>
         </div>
       </nav>
 
-      <h1>Concessionaria Fiat</h1>
-
-      <div class="card" style="width: 18rem;">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-          <p class="card-text">Siamo presenti in
-            <p ><span th:text="${numeroRegioni}"></span> regioni!</p>
-          </p>
-        </div>
-      </div>
-
+    <table class="table">
+        <thead class="thead-light">
+          <tr>
+            <th scope="col">Nome</th>
+            <th scope="col">Via</th>
+            <th scope="col">Città</th>
+            <th scope="col">Regione</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr th:each="concessionario : ${listaConcessionari}">
+            <th th:text="${concessionario.nome}" scope="row">1</th>
+            <td th:text="${concessionario.via}">Mark</td>
+            <td th:text="${concessionario.citta}">Otto</td>
+            <td th:text="${concessionario.regione}">@mdo</td>
+          </tr>
+        </tbody>
+      </table>
+      
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
