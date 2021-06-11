@@ -15,10 +15,16 @@ public class ControllerAuto {
         this.autoRepository = autoRepository;
     }
 
-    @GetMapping("/automobili")
-    public String getAuto(Model model) {
-        model.addAttribute("automobili", autoRepository.findAll());
-        return "auto";
+    // @GetMapping("/automobili")
+    // public String getAuto(Model model) {
+    //     model.addAttribute("automobili", autoRepository.findAll());
+    //     return "auto";
+    // }
+
+    @GetMapping("/listaauto")
+    public String getAllAutomobili(Model model) {
+        model.addAttribute("listaAutomobili", autoRepository.findAll());
+        return "listaauto";
     }
     
 }
