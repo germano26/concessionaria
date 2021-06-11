@@ -27,6 +27,14 @@ public class Auto {
     @JoinColumn(name = "concessionario_id")
     private Concessionario concessionario;
 
+    public Concessionario getConcessionario() {
+        return concessionario;
+    }
+
+    public void setConcessionario(Concessionario concessionario) {
+        this.concessionario = concessionario;
+    }
+
     public Auto () {}
 
     public Long getId() {
