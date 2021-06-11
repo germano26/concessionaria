@@ -18,6 +18,12 @@ public class BootstrapData implements CommandLineRunner {
     private ConcessionarioRepository concessionarioRepository;
     private DipendenteRepository dipendenteRepository;
 
+    public BootstrapData(AutoRepository autoRepository, ConcessionarioRepository concessionarioRepository, DipendenteRepository dipendenteRepository) {
+        this.autoRepository = autoRepository;
+        this.concessionarioRepository = concessionarioRepository;
+        this.dipendenteRepository = dipendenteRepository;
+    }
+
     @Override
     public void run(String... args) throws Exception {
         
@@ -28,7 +34,7 @@ public class BootstrapData implements CommandLineRunner {
         c1.setRegione(Regione.LAZIO);
 
         Concessionario c2 = new Concessionario();
-        c2.setNome("Concessionario 2");
+        c2.setNome("Valentino Auto");
         c2.setVia("Via Padova");
         c2.setCitta("L'Aquila");
         c2.setRegione(Regione.ABRUZZO);
