@@ -9,7 +9,7 @@ public interface ConcessionarioRepository extends CrudRepository<Concessionario,
 
     // SELECT COUNT(DISTINCT regioni) FROM concessionario 
     // @Query("SELECT COUNT(DISTINCT(c.regione)) FROM Concessionario c")
-    @Query("SELECT COUNT(c) FROM Concessionario c")
+    @Query("SELECT COUNT(DISTINCT(c.regione)) FROM Concessionario c")
     Integer countRegion();
     
 }
