@@ -11,7 +11,14 @@ import javax.validation.constraints.Size;
 
 import org.springframework.lang.NonNull;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 @Entity
+@Getter
+@Setter
+@NoArgsConstructor
 public class Dipendente {
     
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
@@ -35,48 +42,4 @@ public class Dipendente {
     @NonNull
     @Min(16)
     private Integer eta;
-
-    public Dipendente () {}
-
-    public Long getId() {
-        return id;
-    }
-    public void setId(Long id) {
-        this.id = id;
-    }
-    public Concessionario getConcessionario() {
-        return concessionario;
-    }
-    public void setConcessionario(Concessionario concessionario) {
-        this.concessionario = concessionario;
-    }
-    public String getNome() {
-        return nome;
-    }
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-    public String getCognome() {
-        return cognome;
-    }
-    public void setCognome(String cognome) {
-        this.cognome = cognome;
-    }
-    public Double getStipendio() {
-        return stipendio;
-    }
-    public void setStipendio(Double stipendio) {
-        this.stipendio = stipendio;
-    }
-    public Integer getEta() {
-        return eta;
-    }
-    public void setEta(Integer eta) {
-        this.eta = eta;
-    }
-
-
-
-
-
 }

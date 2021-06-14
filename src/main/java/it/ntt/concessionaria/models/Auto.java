@@ -10,7 +10,14 @@ import javax.validation.constraints.Size;
 
 import org.springframework.lang.NonNull;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 @Entity
+@Getter
+@Setter
+@NoArgsConstructor
 public class Auto {
     
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
@@ -27,33 +34,4 @@ public class Auto {
     @JoinColumn(name = "concessionario_id")
     private Concessionario concessionario;
 
-    public Concessionario getConcessionario() {
-        return concessionario;
-    }
-
-    public void setConcessionario(Concessionario concessionario) {
-        this.concessionario = concessionario;
-    }
-
-    public Auto () {}
-
-    public Long getId() {
-        return id;
-    }
-    public void setId(Long id) {
-        this.id = id;
-    }
-    public String getModello() {
-        return modello;
-    }
-    public void setModello(String modello) {
-        this.modello = modello;
-    }
-    public Double getPrezzo() {
-        return prezzo;
-    }
-    public void setPrezzo(Double prezzo) {
-        this.prezzo = prezzo;
-    }
-    
 }
