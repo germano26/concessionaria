@@ -6,8 +6,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import it.ntt.concessionaria.models.Concessionario;
+import it.ntt.concessionaria.models.Regione;
 // import antlr.collections.List;
 // import it.ntt.concessionaria.models.Concessionario;
 import it.ntt.concessionaria.repositories.ConcessionarioRepository;
@@ -40,5 +42,17 @@ public class ControllerConcessionari {
             model.addAttribute("descrizioneconcessionario", "ID non trovato!");
         }
         return "dettaglioconcessionario";
+    }
+
+    @PostMapping("/addconcessionario")
+    public String addConcessionario(Concessionario concessionario) {
+        concessionarioRepository.save(concessionario);
+        return "redirect:/listaconcessionari";
+    }
+
+    @GetMapping("/addconcessionario")
+    public String getFormConcessionario(Model model) {
+        model.addAttribute("regioni", Regione.values());
+        return "formconcessionario";
     }
 }
