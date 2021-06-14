@@ -41,7 +41,7 @@
         </thead>
         <tbody>
           <tr th:each="concessionario : ${listaConcessionari}">
-            <th th:text="${concessionario.nome}" scope="row">1</th>
+            <th scope="row"><a th:text="${concessionario.nome}" th:href="${concessionario.getUrlDettaglio()}"></a></th>
             <td th:text="${concessionario.via}">Mark</td>
             <td th:text="${concessionario.citta}">Otto</td>
             <td th:text="${concessionario.regione}">@mdo</td>

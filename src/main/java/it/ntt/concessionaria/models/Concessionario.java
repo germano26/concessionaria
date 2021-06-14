@@ -50,5 +50,9 @@ public class Concessionario {
 
     @OneToMany(mappedBy = "concessionario")
     private Set<Auto> listaAuto = new HashSet<>();
+
+    public String getUrlDettaglio() {
+        return "/concessionario/" + id.toString();
+    }
     
 }
